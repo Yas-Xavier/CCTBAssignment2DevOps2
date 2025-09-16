@@ -58,9 +58,11 @@ pipeline {
                         
                         //sh 'node selenium-tests/test_form.js'
                         writeFile file: env.TEST_RESULT_FILE, text: 'true'
+                        sh "cat ${env.TEST_RESULT_FILE}"
                         echo 'Selenium tests passed!'
                     } catch (Exception e) {
                         writeFile file: env.TEST_RESULT_FILE, text: 'false'
+                        sh "cat ${env.TEST_RESULT_FILE}"
                         echo "Selenium tests failed: ${e.getMessage()}"
                     }
                 }
