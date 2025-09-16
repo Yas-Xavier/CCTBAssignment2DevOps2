@@ -4,8 +4,8 @@ pipeline {
     environment {
         TEST_RESULT_FILE = 'test_result.txt'
         REPO_URL = 'https://github.com/Yas-Xavier/CCTBAssignment2DevOps2.git'
-        TESTING_SERVER = ''
-        PRODUCTION_SERVER = ''
+        TESTING_SERVER = '13.217.197.111'
+        PRODUCTION_SERVER = '100.24.46.148'
         SSH_CREDENTIAL_ID = 'ssh-key-id'
     }
     
