@@ -49,8 +49,14 @@ pipeline {
                 script {
                     try {
                         sleep(time: 5, unit: 'SECONDS')
+
+                        sh '''
+                            cd selenium-tests
+                            npm install selenium-webdriver chromedriver
+                            node test_form.js
+                        '''
                         
-                        sh 'node selenium-tests/test_form.js'
+                        //sh 'node selenium-tests/test_form.js'
                         writeFile file: env.TEST_RESULT_FILE, text: 'true'
                         echo 'Selenium tests passed!'
                     } catch (Exception e) {
